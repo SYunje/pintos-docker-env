@@ -123,7 +123,7 @@ The `alarm-multiple` test is designed to verify:
 
 ## Test Execution Result
 
-![Pintos Alarm Multiple Test Output](https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050)
+<img width="575" alt="Pintos Alarm Multiple Test Output" src="https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050" />
 
 ### Test Output Explanation
 When the test runs successfully, you will see output similar to:
@@ -329,7 +329,7 @@ pintos --qemu -- run alarm-multiple
 
 ## 테스트 실행 결과
 
-![Pintos Alarm Multiple 테스트 출력](https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050)
+<img width="575" alt="Pintos Alarm Multiple Test Output" src="https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050" />
 
 ### 테스트 실행 예시
 테스트가 성공적으로 실행되면 다음과 유사한 출력을 볼 수 있습니다:

@@ -161,6 +161,12 @@ ls ~/pintos/src/threads/build
 pintos --qemu -- run <test-name>
 ```
 
+
+## Acknowledgments
+
+This project was created with reference to the lecture slides of Professor Dae-Young Heo's Operating Systems course at Kookmin University.
+
+
 ----------------------------------------------------------------------------------------------------------------
 
 

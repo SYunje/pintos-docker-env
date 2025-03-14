@@ -1,6 +1,30 @@
 # Pintos Docker Development Environment
 
-This repository provides a comprehensive Docker-based setup for developing and running the Pintos operating system project. Pintos is an educational operating system designed to help students understand core OS concepts through hands-on implementation.
+This repository provides a comprehensive Docker-based setup for developing and running the Pintos operating system project. Designed for educational purposes, Pintos is an open-source instructional operating system that helps students understand core operating system concepts through hands-on implementation and practical learning.
+Pintos enables students to explore fundamental OS mechanisms such as:
+
+Thread scheduling
+Synchronization primitives
+Memory management
+Process creation and management
+Virtual memory systems
+File systems
+
+By providing a lightweight, educational operating system, this Docker environment simplifies the setup process and ensures a consistent development environment across different host systems. Students and developers can focus on learning OS concepts without getting bogged down in complex installation procedures.
+Key Features:
+
+Ubuntu 16.04 base image for Pintos compatibility
+Pre-configured development tools
+GCC 4.4 compiler setup
+QEMU for OS simulation
+SSH access for remote development
+Streamlined build and test processes
+
+Ideal for:
+
+Operating Systems courses
+OS internals study
+Practical kernel development learning
 
 ## Prerequisites and Setup
 
@@ -193,7 +217,31 @@ This project was created with reference to the lecture slides of Professor Dae-Y
 
 # Pintos Docker 개발 환경
 
-이 저장소는 Pintos 운영 체제 프로젝트를 개발하고 실행하기 위한 포괄적인 Docker 기반 설정을 제공합니다. Pintos는 실습을 통해 핵심 운영 체제 개념을 이해하도록 설계된 교육용 운영 체제입니다.
+이 저장소는 Ubuntu 24.04에서 Pintos 운영 체제 프로젝트를 개발하고 실행하기 위한 포괄적인 Docker 기반 설정을 제공합니다. 교육용으로 설계된 Pintos는 개방형 교육용 운영 체제로, 학생들이 실습과 실제 구현을 통해 핵심 운영 체제 개념을 이해할 수 있도록 돕습니다.
+Pintos를 통해 학생들은 다음과 같은 운영 체제의 기본 메커니즘을 탐구할 수 있습니다:
+
+스레드 스케줄링
+동기화 기본 요소
+메모리 관리
+프로세스 생성 및 관리
+가상 메모리 시스템
+파일 시스템
+
+이 Docker 환경은 경량화된 교육용 운영 체제를 제공하여 설치 과정을 간소화하고 다양한 호스트 시스템에서 일관된 개발 환경을 보장합니다. 학생과 개발자들은 복잡한 설치 절차에 신경 쓰지 않고 운영 체제 개념에 집중할 수 있습니다.
+주요 특징:
+
+Pintos 호환성을 위한 Ubuntu 16.04 기본 이미지
+사전 구성된 개발 도구
+GCC 4.4 컴파일러 설정
+OS 시뮬레이션을 위한 QEMU
+원격 개발을 위한 SSH 접속
+간소화된 빌드 및 테스트 프로세스
+
+다음에 적합합니다:
+
+운영 체제 강좌
+OS 내부 구조 학습
+실습 커널 개발 학습
 
 ## 사전 준비 및 설정
 

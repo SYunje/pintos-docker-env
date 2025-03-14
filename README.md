@@ -74,19 +74,7 @@ pintos --qemu -- run alarm-multiple
 
 ### Test Execution Example
 When the test runs successfully, you will see output similar to:
-```
-qemu -hda /tmp/8OpMSGMkD2.dsk -m 4 -net none -nographic -monitor null
-PiLo hda1
-Loading........
-Kernel command line: run alarm-multiple
-Pintos booting with 3,968 kB RAM...
-...
-(alarm-multiple) begin
-(alarm-multiple) Creating 5 threads to sleep 7 times each.
-...
-(alarm-multiple) end
-Execution of 'alarm-multiple' complete.
-```
+<img width="575" alt="Pintos Alarm Multiple Test Output" src="https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050" />
 
 ### Exploring Key Directories
 ```bash

@@ -1,3 +1,181 @@
+# Pintos Docker Development Environment
+This repository provides a Docker-based environment for Pintos operating system development on Ubuntu 24.04.
+
+## Prerequisites
+### 1. Update System Packages
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+### 2. Docker Installation
+```bash
+# Update package index
+sudo apt update
+# Install Docker
+sudo apt install docker.io -y
+# Enable Docker to start on boot
+sudo systemctl enable --now docker
+# Add current user to docker group
+sudo usermod -aG docker $USER
+# Ensure Docker service is enabled
+sudo systemctl enable docker
+# Verify Docker version
+docker --version
+```
+
+### 3. Firewall Configuration (UFW)
+```bash
+# Allow port 5555
+sudo ufw allow 5555/tcp
+# Check firewall status
+sudo ufw status
+```
+
+### 4. Log Out and Log Back In
+```bash
+exit  # Log out
+# Log back in to apply group changes
+```
+
+## Project Setup
+### 5. Clone the Repository
+```bash
+git clone https://github.com/SYunje/pintos-docker-env.git
+cd pintos-docker-env
+```
+
+### 6. Build Docker Image
+```bash
+docker build -t pintos-docker-env .
+```
+
+### 7. Run the Container
+```bash
+docker run -d --restart always -p 5555:22 --name pintos-container pintos-docker-env
+```
+
+## Container Access
+### 8. SSH Connection
+```bash
+ssh user@<host_IP> -p 5555
+```
+- **User Password:** ihatepintos
+- **Root Password:** vlsxhtmtlfgdjdy12!@
+
+## Pintos Test Execution
+### Test Execution Method
+```bash
+# Navigate to Pintos threads directory
+cd ~/pintos/src/threads/build
+# Run alarm-multiple test
+pintos --qemu -- run alarm-multiple
+```
+
+### Test Execution Example
+When the test runs successfully, you will see output similar to:
+```
+qemu -hda /tmp/8OpMSGMkD2.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading........
+Kernel command line: run alarm-multiple
+Pintos booting with 3,968 kB RAM...
+...
+(alarm-multiple) begin
+(alarm-multiple) Creating 5 threads to sleep 7 times each.
+...
+(alarm-multiple) end
+Execution of 'alarm-multiple' complete.
+```
+
+### Exploring Key Directories
+```bash
+# Pintos threads source directory
+cd ~/pintos/src/threads
+# Build directory
+cd ~/pintos/src/threads/build
+# Check available tests
+ls tests
+```
+
+### Additional Test Execution Examples
+```bash
+# Run other tests
+pintos --qemu -- run <test-name>
+# Some example tests
+# pintos --qemu -- run alarm-single
+# pintos --qemu -- run priority-change
+# pintos --qemu -- run priority-preempt
+```
+
+## Additional Information
+- Pintos is an educational operating system project
+- Tests cover various OS concepts including threads, synchronization, and scheduling
+- Each test verifies specific operating system functionalities
+
+## Container Management Commands
+### List Containers
+```bash
+docker ps -a
+```
+
+### Stop Container
+```bash
+docker stop pintos-container
+```
+
+### Start Container
+```bash
+docker start pintos-container
+```
+
+### View Container Logs
+```bash
+docker logs pintos-container
+```
+
+## System Cleanup
+### Remove Unused Containers
+```bash
+docker container prune -f
+```
+
+### Remove Unused Images
+```bash
+docker image prune -a -f
+```
+
+### Remove Build Cache
+```bash
+docker builder prune -a -f
+```
+
+### Complete System Cleanup
+```bash
+docker system prune -a -f
+```
+
+## Troubleshooting
+- Verify log out and log back in after adding user to docker group
+- Check Docker service status: `sudo systemctl status docker`
+- Verify container running status: `docker ps`
+
+## Compatibility Notes
+- **Host System:** Ubuntu 24.04
+- **Container Base Image:** Ubuntu 16.04 (for Pintos compatibility)
+- Additional configuration may be needed to address potential version conflicts
+
+## Additional Test Commands
+```bash
+# List available Pintos tests
+ls ~/pintos/src/threads/build
+# Run other tests
+pintos --qemu -- run <test-name>
+```
+
+----------------------------------------------------------------------------------------------------------------
+
+
 # Pintos Docker 개발 환경
 
 이 저장소는 Ubuntu 24.04에서 Pintos 운영 체제 개발을 위한 Docker 기반 환경을 제공합니다.

@@ -88,27 +88,32 @@ make
 pintos --qemu -- run <test-name>
 ```
 
-### Example Test Compilation
+### Alarm Multiple Test Execution
 ```bash
-# Example for compiling and running tests in different projects
-cd ~/pintos/src/threads
-make
-cd ~/pintos/src/userprog
-make
-cd ~/pintos/src/vm
-make
+# Navigate to the threads build directory
+cd ~/pintos/src/threads/build
+
+# Run the alarm-multiple test using QEMU
+pintos --qemu -- run alarm-multiple
 ```
 
-### Notes
-- Each Pintos project (threads, userprog, vm, filesys) requires separate compilation
-- Ensure you're in the correct directory before running `make`
-- Use `make clean` to remove previous build artifacts before recompiling
+### Test Explanation
+The `alarm-multiple` test is designed to verify:
+- Thread scheduling mechanisms
+- Sleep and alarm functionality
+- Concurrent thread execution
+
+#### Key Test Characteristics
+- Creates 5 threads
+- Each thread sleeps for different durations
+- Demonstrates how threads with different sleep times interact
+- Validates the operating system's thread management capabilities
 
 ## Test Execution Result
 
-<img width="575" alt="Pintos Alarm Multiple Test Output" src="https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050" />
+![Pintos Alarm Multiple Test Output](https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050)
 
-### Test Execution Example
+### Test Output Explanation
 When the test runs successfully, you will see output similar to:
 ```
 qemu -hda /tmp/8OpMSGMkD2.dsk -m 4 -net none -nographic -monitor null
@@ -123,15 +128,6 @@ Pintos booting with 3,968 kB RAM...
 (alarm-multiple) end
 Execution of 'alarm-multiple' complete.
 ```
-
-### Test Description
-The `alarm-multiple` test demonstrates the threading and scheduling capabilities of the Pintos operating system.
-
-#### Key Observations
-- 5 threads are created
-- Each thread sleeps for different durations (10, 20, 30, 40, 50 ticks)
-- Each thread iterates 7 times
-- The product of iteration count and sleep duration appears in non-descending order
 
 ## Container Management Commands
 
@@ -191,6 +187,7 @@ docker system prune -a -f
 
 ## Acknowledgments
 This project was created with reference to the lecture slides of Professor Dae-Young Heo's Operating Systems course at Kookmin University.
+
 
 ---
 
@@ -284,25 +281,30 @@ make
 pintos --qemu -- run <테스트-이름>
 ```
 
-### 테스트 컴파일 예시
+### Alarm Multiple 테스트 실행
 ```bash
-# 다른 프로젝트의 테스트 컴파일 및 실행 예시
-cd ~/pintos/src/threads
-make
-cd ~/pintos/src/userprog
-make
-cd ~/pintos/src/vm
-make
+# threads 빌드 디렉토리로 이동
+cd ~/pintos/src/threads/build
+
+# QEMU를 사용하여 alarm-multiple 테스트 실행
+pintos --qemu -- run alarm-multiple
 ```
 
-### 참고 사항
-- 각 Pintos 프로젝트(threads, userprog, vm, filesys)는 별도의 컴파일이 필요합니다.
-- `make`를 실행하기 전에 올바른 디렉토리에 있는지 확인하세요.
-- 이전 빌드 artifacts를 제거하려면 `make clean`을 사용하세요.
+### 테스트 설명
+`alarm-multiple` 테스트는 다음을 검증하도록 설계되었습니다:
+- 스레드 스케줄링 메커니즘
+- Sleep 및 알람 기능
+- 병행 스레드 실행
+
+#### 테스트의 주요 특징
+- 5개의 스레드 생성
+- 각 스레드는 서로 다른 지속 시간으로 sleep
+- 다른 sleep 시간을 가진 스레드들의 상호작용 시연
+- 운영체제의 스레드 관리 능력 검증
 
 ## 테스트 실행 결과
 
-<img width="575" alt="Pintos Alarm Multiple 테스트 출력" src="https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050" />
+![Pintos Alarm Multiple 테스트 출력](https://github.com/user-attachments/assets/61670ff7-6dce-41ce-a5a4-fd6559cf8050)
 
 ### 테스트 실행 예시
 테스트가 성공적으로 실행되면 다음과 유사한 출력을 볼 수 있습니다:
@@ -319,15 +321,6 @@ Pintos booting with 3,968 kB RAM...
 (alarm-multiple) end
 Execution of 'alarm-multiple' complete.
 ```
-
-### 테스트 설명
-`alarm-multiple` 테스트는 Pintos 운영 체제의 스레딩 및 스케줄링 기능을 보여줍니다.
-
-#### 주요 관찰 사항
-- 5개의 스레드 생성
-- 각 스레드는 서로 다른 지속 시간(10, 20, 30, 40, 50 틱)으로 sleep
-- 각 스레드는 7번 반복
-- 반복 횟수와 sleep 지속 시간의 곱이 비내림차순으로 나타남
 
 ## 컨테이너 관리 명령어
 

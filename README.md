@@ -93,7 +93,11 @@ The Dockerfile pre-compiles only the threads project by default. To compile and 
 # Navigate to the specific project directory
 cd ~/pintos/src/<project_name>
 
-# Compile the project
+
+# Fix permission issues by changing the ownership of the entire pintos directory
+sudo chown -R $(whoami):$(whoami) ~/pintos
+
+# Build the project
 make
 
 # Run a specific test

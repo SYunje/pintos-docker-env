@@ -303,7 +303,10 @@ Dockerfile은 기본적으로 threads 프로젝트만 사전 컴파일합니다.
 # 특정 프로젝트 디렉토리로 이동
 cd ~/pintos/src/<프로젝트_이름>
 
-# 프로젝트 컴파일
+# 권한 문제 해결: pintos 디렉토리 전체의 소유자를 현재 사용자로 변경합니다.
+sudo chown -R $(whoami):$(whoami) ~/pintos
+
+# 프로젝트 빌드
 make
 
 # 특정 테스트 실행
